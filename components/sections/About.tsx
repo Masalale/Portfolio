@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-
-const basePath = process.env.NODE_ENV === 'production' ? '/Portfolio' : '';
+import profileImage from "@/public/images/IMG-20250122-WA0025.jpg";
 
 export function About() {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -79,7 +78,7 @@ export function About() {
           <div className="flex justify-center items-center">
             <div className="neon-card" id="card">
               <Image
-                src={`${basePath}/images/IMG-20250122-WA0025.jpg`}
+                src={profileImage}
                 alt="Clarence Chomba"
                 className="neon-img"
                 width={300}
