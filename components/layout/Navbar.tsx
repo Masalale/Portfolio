@@ -15,17 +15,18 @@ export function Navbar({ sectionColors }: NavbarProps) {
     const sections = document.querySelectorAll("section[id]");
 
     function handleScroll() {
-      // The trigger point is the navbar position (fixed at top)
-      const navbarOffset = 50; // Approximate vertical center of navbar
+      const scrollY = window.scrollY;
+      // Use a small offset from top of viewport for instant switch at section boundary
+      const triggerPoint = scrollY + 100; // 100px from top of viewport
 
       sections.forEach((section, index) => {
         const el = section as HTMLElement;
-        const rect = el.getBoundingClientRect();
+        const { offsetTop, offsetHeight } = el;
         const id = el.getAttribute("id") || "";
+        const sectionEnd = offsetTop + offsetHeight;
 
-        // Section is active when its top edge is at or above the navbar,
-        // and its bottom edge is below the navbar
-        if (rect.top <= navbarOffset && rect.bottom > navbarOffset) {
+        // Trigger when section boundary crosses the trigger point
+        if (triggerPoint >= offsetTop && triggerPoint < sectionEnd) {
           setActiveSection(id);
 
           if (brandRef.current) {
@@ -64,13 +65,11 @@ export function Navbar({ sectionColors }: NavbarProps) {
       className="navbar fixed top-6 left-8 z-[1000] w-[calc(100%-4rem)] transition-all duration-300 sm:top-6 sm:left-4 sm:w-[calc(100%-2rem)]" 
       data-active-section={activeSection}
     >
-      <div className="glass-panel inline-flex items-center">
-        <div 
-          ref={brandRef} 
-          className="brand-text font-brand text-burgundy tracking-wide transition-opacity duration-300"
-        >
-          Clarence Chomba
-        </div>
+      <div 
+        ref={brandRef} 
+        className="brand-text font-brand text-burgundy tracking-wide transition-opacity duration-300"
+      >
+        Clarence Chomba
       </div>
     </nav>
   );
