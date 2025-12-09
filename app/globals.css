@@ -5,30 +5,30 @@
    ============================================ */
 
 @theme {
-  /* Custom Colors */
-  --color-black: #11100F;
-  --color-burgundy: #5D1C34;
-  --color-gold: #A67D44;
-  --color-sage: #899481;
-  --color-taupe: #CDBCAB;
-  --color-cream: #EFE9E1;
+    /* Custom Colors */
+    --color-black: #11100F;
+    --color-burgundy: #5D1C34;
+    --color-gold: #A67D44;
+    --color-sage: #899481;
+    --color-taupe: #CDBCAB;
+    --color-cream: #EFE9E1;
 
-  /* Custom Font Families */
-  --font-primary: "Boliens", serif;
-  --font-brand: "CharimaShareneDemo", serif;
-  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    /* Custom Font Families */
+    --font-primary: "Boliens", serif;
+    --font-brand: "CharimaShareneDemo", serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-  /* Custom Shadows */
-  --shadow-default: 0 4px 15px rgba(17, 16, 15, 0.08);
-  --shadow-hover: 0 8px 25px rgba(17, 16, 15, 0.15);
-  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-card-hover: 0 30px 60px rgba(0, 0, 0, 0.15);
+    /* Custom Shadows */
+    --shadow-default: 0 4px 15px rgba(17, 16, 15, 0.08);
+    --shadow-hover: 0 8px 25px rgba(17, 16, 15, 0.15);
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-card-hover: 0 30px 60px rgba(0, 0, 0, 0.15);
 
-  /* Custom Screens */
-  --breakpoint-sm: 480px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 950px;
-  --breakpoint-xl: 1200px;
+    /* Custom Screens */
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 950px;
+    --breakpoint-xl: 1200px;
 }
 
 /* ============================================
@@ -37,13 +37,15 @@
 
 @font-face {
     font-family: 'Boliens';
-    src: url('/fonts/Boliens.otf') format('opentype');
+    src: url('/Portfolio/fonts/Boliens.otf') format('opentype'),
+        url('/fonts/Boliens.otf') format('opentype');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'CharimaShareneDemo';
-    src: url('/fonts/CharimaShareneDemoRegular-BF684fd6b53af68.ttf') format('truetype');
+    src: url('/Portfolio/fonts/CharimaShareneDemoRegular-BF684fd6b53af68.ttf') format('truetype'),
+        url('/fonts/CharimaShareneDemoRegular-BF684fd6b53af68.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -59,6 +61,7 @@
     --taupe: #CDBCAB;
     --cream: #EFE9E1;
     --text-shadow-subtle: 0 2px 4px rgba(17, 16, 15, 0.1);
+    --asset-prefix: '';
 }
 
 /* ============================================
@@ -77,36 +80,48 @@
     }
 
     /* Consistent Typography Scale */
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         @apply font-primary text-black leading-tight;
     }
 
     h1 {
-        font-size: clamp(2.5rem, 6vw, 4rem);      /* 40px - 64px */
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        /* 40px - 64px */
     }
 
     h2 {
-        font-size: clamp(2rem, 5vw, 3rem);        /* 32px - 48px */
+        font-size: clamp(2rem, 5vw, 3rem);
+        /* 32px - 48px */
     }
 
     h3 {
-        font-size: clamp(1.5rem, 4vw, 2rem);      /* 24px - 32px */
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        /* 24px - 32px */
     }
 
     h4 {
-        font-size: clamp(1.25rem, 3vw, 1.5rem);   /* 20px - 24px */
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+        /* 20px - 24px */
     }
 
     h5 {
-        font-size: clamp(1.1rem, 2.5vw, 1.25rem); /* 17.6px - 20px */
+        font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+        /* 17.6px - 20px */
     }
 
     h6 {
-        font-size: clamp(1rem, 2vw, 1.125rem);    /* 16px - 18px */
+        font-size: clamp(1rem, 2vw, 1.125rem);
+        /* 16px - 18px */
     }
 
     p {
-        font-size: clamp(1rem, 1.5vw, 1.15rem);   /* 16px - 18.4px */
+        font-size: clamp(1rem, 1.5vw, 1.15rem);
+        /* 16px - 18.4px */
         line-height: 1.7;
     }
 }
@@ -116,6 +131,7 @@
    ============================================ */
 
 @layer components {
+
     /* Consolidated gradient background for sections */
     .bg-gradient-section {
         background: linear-gradient(135deg, var(--cream) 0%, var(--taupe) 100%);
@@ -154,13 +170,14 @@
 
     /* Card component with hover effects */
     .card {
-        @apply bg-[#fafafa] rounded-2xl p-6 flex flex-col relative overflow-hidden border border-black/5;
+        @apply bg-[#fafafa] rounded-2xl p-5 flex flex-col relative overflow-hidden border border-black/5;
         width: fit-content;
         height: fit-content;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         transition: all 0.3s ease;
         animation: slideInCard 0.6s ease-out forwards;
         animation-delay: calc(var(--card-index, 0) * 0.1s);
+        transform: scale(0.8);
     }
 
     .card::before {
@@ -182,6 +199,94 @@
 
     .card:hover::before {
         opacity: 1;
+    }
+
+    /* Glow Card component with hover spotlight effect */
+    .glow-card {
+        position: relative;
+        border-radius: 1rem;
+        cursor: pointer;
+        width: 100%;
+        height: fit-content;
+        animation: slideInCard 0.6s ease-out forwards;
+        animation-delay: calc(var(--card-index, 0) * 0.1s);
+        transform: scale(0.8);
+    }
+
+    .glow-card::before,
+    .glow-card::after {
+        border-radius: 1rem;
+        content: "";
+        height: 100%;
+        left: 0px;
+        opacity: 0.32;
+        /* reduced base intensity */
+        position: absolute;
+        top: 0px;
+        transition: opacity 350ms;
+        width: 100%;
+        pointer-events: none;
+    }
+
+    /* The "Spotlight" effect - bright center glow with lower intensity */
+    .glow-card::before {
+        background: radial-gradient(700px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(166, 125, 68, 0.22),
+                rgba(93, 28, 52, 0.13) 30%,
+                transparent 55%);
+        z-index: 3;
+        transition: background-size 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* The "Border Glow" effect - edge highlight with lower intensity */
+    .glow-card::after {
+        background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(93, 28, 52, 0.28),
+                rgba(166, 125, 68, 0.16) 28%,
+                transparent 52%);
+        z-index: 1;
+        transition: background-size 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* On card hover, increase blob size by 1.2x */
+    .glow-card:hover::before {
+        background: radial-gradient(840px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(166, 125, 68, 0.22),
+                rgba(93, 28, 52, 0.13) 30%,
+                transparent 55%);
+    }
+
+    .glow-card:hover::after {
+        background: radial-gradient(720px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(93, 28, 52, 0.28),
+                rgba(166, 125, 68, 0.16) 28%,
+                transparent 52%);
+    }
+
+    /* Boost glow when the grid is actively hovered for stronger proximity */
+    .grid:hover .glow-card::before,
+    .grid:hover .glow-card::after {
+        opacity: 0.6;
+    }
+
+    .glow-card-content {
+        @apply bg-[#fafafa] rounded-2xl p-5 flex flex-col relative overflow-hidden;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .glow-card:hover {
+        transform: translateY(-8px) scale(1.02);
+    }
+
+    .glow-card:hover .glow-card-content {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        border-color: rgba(166, 125, 68, 0.2);
     }
 
     /* Card title - consistent h3 sizing */
@@ -303,13 +408,16 @@
             pointer-events: none;
         }
     }
-} /* End @layer components */
+}
+
+/* End @layer components */
 
 /* ============================================
    Utilities Layer
    ============================================ */
 
 @layer utilities {
+
     /* Text shadow utility */
     .text-shadow-subtle {
         text-shadow: var(--text-shadow-subtle);
@@ -321,19 +429,46 @@
    ============================================ */
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: rotate(45deg) translateY(0); }
-    40% { transform: rotate(45deg) translateY(-10px); }
-    60% { transform: rotate(45deg) translateY(-5px); }
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: rotate(45deg) translateY(0);
+    }
+
+    40% {
+        transform: rotate(45deg) translateY(-10px);
+    }
+
+    60% {
+        transform: rotate(45deg) translateY(-5px);
+    }
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes slideInCard {
-    from { opacity: 0; transform: translateY(50px) scale(0.95); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .animate-bounce-arrow {
@@ -348,7 +483,8 @@
    Lenis Smooth Scroll Styles
    ============================================ */
 
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
     height: auto;
 }
 
