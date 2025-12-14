@@ -1,47 +1,65 @@
+import { LucideIcon } from "lucide-react";
+
+export interface Skill {
+  name: string;
+  icon: string; // Lucide icon name
+}
+
 export interface SkillCategory {
   title: string;
   description: string;
-  skills: string[];
+  skills: Skill[];
+  categoryIcon: string;
 }
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Proficient",
-    description: "Core technologies I work with confidently and regularly.",
-    skills: ["Python", "HTML/CSS", "JavaScript", "SQL", "Git/GitHub", "Linux Systems"],
-  },
-  {
-    title: "Comfortable",
-    description: "Frameworks and tools I've used in production projects.",
+    title: "Frontend Development",
+    description: "Building responsive, interactive user interfaces",
+    categoryIcon: "Monitor",
     skills: [
-      "Node.js",
-      "Java",
-      "C",
-      "PHP",
-      "MySQL",
-      "MS SQL Server",
-      "Flask",
-      "Express",
-      "Docker",
-      "React",
+      { name: "React", icon: "Atom" },
+      { name: "JavaScript", icon: "FileJson" },
+      { name: "HTML/CSS", icon: "FileCode" },
+      { name: "Tailwind CSS", icon: "Wind" },
+      { name: "Next.js", icon: "Layers" },
     ],
   },
   {
-    title: "Learning",
-    description: "Technologies I'm actively developing expertise in.",
-    skills: ["C#", "Unity", "AR/VR Development"],
+    title: "Backend Development",
+    description: "Creating robust server-side applications and APIs",
+    categoryIcon: "Server",
+    skills: [
+      { name: "Python", icon: "Code2" },
+      { name: "Node.js", icon: "Server" },
+      { name: "Flask", icon: "Flask" },
+      { name: "Express", icon: "Zap" },
+      { name: "Java", icon: "Coffee" },
+    ],
   },
   {
-    title: "Tools",
-    description: "Development environments and utilities I use daily.",
+    title: "Database & APIs",
+    description: "Designing data architecture and integrations",
+    categoryIcon: "Database",
     skills: [
-      "VS Code",
-      "Neovim",
-      "Android Studio",
-      "NetBeans",
-      "Figma",
-      "Chart.js",
-      "jQuery",
+      { name: "MySQL", icon: "Database" },
+      { name: "SQLite", icon: "Database" },
+      { name: "MS SQL Server", icon: "DatabaseZap" },
+      { name: "REST APIs", icon: "Cloud" },
+      { name: "SQL", icon: "FileSpreadsheet" },
+    ],
+  },
+  {
+    title: "DevOps & Tools",
+    description: "Streamlining development and deployment workflows",
+    categoryIcon: "Settings",
+    skills: [
+      { name: "Docker", icon: "Container" },
+      { name: "Git/GitHub", icon: "GitBranch" },
+      { name: "Linux", icon: "Terminal" },
+      { name: "VS Code", icon: "Code" },
+      { name: "Figma", icon: "Figma" },
     ],
   },
 ];
+

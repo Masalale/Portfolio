@@ -3,8 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";
-import { Skills } from "@/components/sections/Skills";
-import { Projects } from "@/components/sections/Projects";
+import { HorizontalWorkReel } from "@/components/sections/HorizontalWorkReel";
 import { Contact } from "@/components/sections/Contact";
 
 // Section colors for brand name color changes on scroll
@@ -14,7 +13,6 @@ const sectionColors = [
   "var(--burgundy)",
   "var(--gold)",
   "var(--burgundy)",
-  "var(--gold)",
 ];
 
 export default function Home() {
@@ -24,9 +22,8 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <HorizontalWorkReel />
         <Experience />
-        <Skills />
-        <Projects />
         <Contact />
       </main>
       <Footer />
