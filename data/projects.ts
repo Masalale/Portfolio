@@ -1,3 +1,11 @@
+import type { StaticImageData } from "next/image";
+import nycImage from "@/public/projects/nyc-urban-mobility.png";
+import mobileMoneyImage from "@/public/projects/mobile-money.png";
+import votingSystemImage from "@/public/projects/voting-system.png";
+import recipeFinderImage from "@/public/projects/recipe-finder.png";
+import braniacsImage from "@/public/projects/braniacs-website.png";
+import assignmentReminderImage from "@/public/projects/assignment-reminder.png";
+
 export interface Technology {
   name: string;
   icon: string;
@@ -9,7 +17,7 @@ export interface Project {
   description: string;
   longDescription: string;
   category: "Full-Stack" | "Frontend" | "Backend" | "DevOps";
-  image: string;
+  image: string | StaticImageData;
   technologies: Technology[];
   skills: string[]; // Skills demonstrated in this project
   github: string;
@@ -27,7 +35,7 @@ export const projects: Project[] = [
 
 Key features include interactive map visualizations, statistical dashboards, and filtering capabilities for temporal and spatial analysis. The project demonstrates proficiency in ETL pipelines, database optimization, and creating intuitive data exploration interfaces.`,
     category: "Full-Stack",
-    image: "/projects/nyc-urban-mobility.png",
+    image: nycImage,
     projectIcon: "MapPin",
     technologies: [
       { name: "Python", icon: "Code2" },
@@ -47,7 +55,7 @@ Key features include interactive map visualizations, statistical dashboards, and
 
 Features include automated data extraction, transaction categorization, spending analytics, and a responsive dashboard for financial insights. The project showcases skills in data engineering, financial technology, and building scalable web applications.`,
     category: "Full-Stack",
-    image: "/projects/mobile-money.png",
+    image: mobileMoneyImage,
     projectIcon: "Wallet",
     technologies: [
       { name: "Python", icon: "Code2" },
@@ -66,7 +74,7 @@ Features include automated data extraction, transaction categorization, spending
 
 Built with React frontend and Node.js/Express backend, the application demonstrates full-stack development capabilities, user authentication systems, and real-time data synchronization across clients.`,
     category: "Full-Stack",
-    image: "/projects/voting-system.png",
+    image: votingSystemImage,
     projectIcon: "Vote",
     technologies: [
       { name: "Node.js", icon: "Server" },
@@ -86,7 +94,7 @@ Built with React frontend and Node.js/Express backend, the application demonstra
 
 The project is containerized using Docker for consistent deployment across environments. It demonstrates proficiency in CLI application design, third-party API integration, and container orchestration.`,
     category: "Backend",
-    image: "/projects/recipe-finder.png",
+    image: recipeFinderImage,
     projectIcon: "ChefHat",
     technologies: [
       { name: "Python", icon: "Code2" },
@@ -105,7 +113,7 @@ The project is containerized using Docker for consistent deployment across envir
 
 Built with Tailwind CSS for styling, the project showcases frontend development skills including responsive layouts, interactive components, and deployment to production hosting.`,
     category: "Frontend",
-    image: "/projects/braniacs-website.png",
+    image: braniacsImage,
     projectIcon: "Users",
     technologies: [
       { name: "HTML", icon: "FileCode" },
@@ -126,7 +134,7 @@ Built with Tailwind CSS for styling, the project showcases frontend development 
 
 Built with Bash scripting and Python, this project demonstrates skills in system automation, scheduled tasks, and creating developer productivity tools.`,
     category: "DevOps",
-    image: "/projects/assignment-reminder.png",
+    image: assignmentReminderImage,
     projectIcon: "Bell",
     technologies: [
       { name: "Bash", icon: "Terminal" },
