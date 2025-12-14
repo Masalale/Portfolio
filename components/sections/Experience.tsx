@@ -10,7 +10,7 @@ export function Experience() {
   useScrollReveal([titleRef]);
 
   return (
-    <section id="experience" className="pt-32 pb-16 min-h-screen flex flex-col items-center bg-gradient-section overflow-hidden md:pt-24 md:pb-16 md:overflow-visible sm:pt-16 sm:pb-8">
+    <section id="experience" className="pt-32 pb-16 min-h-screen flex flex-col items-center bg-cream overflow-hidden md:pt-24 md:pb-16 md:overflow-visible sm:pt-16 sm:pb-8">
       <h2 ref={titleRef} className="page-title">
         Professional Experience
       </h2>
