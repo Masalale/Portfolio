@@ -54,6 +54,13 @@
    ============================================ */
 
 :root {
+    /* Color variables (needed for Tailwind utilities and var() usage) */
+    --black: #11100F;
+    --burgundy: #5D1C34;
+    --gold: #A67D44;
+    --sage: #899481;
+    --taupe: #CDBCAB;
+    --cream: #EFE9E1;
     --charcoal: #333333;
     --text-shadow-subtle: 0 2px 4px rgba(17, 16, 15, 0.1);
     --asset-prefix: '';
