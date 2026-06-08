@@ -6,7 +6,12 @@ export interface Job {
 
 export const experience: Job[] = [
   {
-    company: "Medallion Steakhouse Restaurant",
+    company: "Momentum Labs",
+    role: "Software Development Intern",
+    period: "January 2026 — May 2026",
+  },
+  {
+    company: "Rib House Restaurant",
     role: "IT Support & Operations Manager",
     period: "March 2023 — September 2024",
   },
@@ -14,11 +19,6 @@ export const experience: Job[] = [
     company: "White Sky Investments LTD",
     role: "IT & Web Development Assistant",
     period: "January 2023 — March 2023",
-  },
-  {
-    company: "White Sky Investments LTD",
-    role: "Logistics Data Coordinator",
-    period: "August 2020 — February 2021",
   },
   {
     company: "Polo Restaurant",

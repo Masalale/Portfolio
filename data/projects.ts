@@ -2,9 +2,11 @@ import type { StaticImageData } from "next/image";
 import nycImage from "@/public/projects/nyc-urban-mobility.png";
 import mobileMoneyImage from "@/public/projects/mobile-money.png";
 import votingSystemImage from "@/public/projects/voting-system.png";
-import recipeFinderImage from "@/public/projects/recipe-finder.png";
 import braniacsImage from "@/public/projects/braniacs-website.png";
-import assignmentReminderImage from "@/public/projects/assignment-reminder.png";
+
+// Placeholder — replace with actual screenshots
+const nalaImage = "/projects/braniacs-website.png";
+const momentumImage = "/projects/braniacs-website.png";
 
 export interface Technology {
   name: string;
@@ -19,13 +21,55 @@ export interface Project {
   category: "Full-Stack" | "Frontend" | "Backend" | "DevOps";
   image: string | StaticImageData;
   technologies: Technology[];
-  skills: string[]; // Skills demonstrated in this project
+  skills: string[];
   github: string;
   live?: string;
   projectIcon: string;
 }
 
 export const projects: Project[] = [
+  {
+    title: "Natures Lather (NALA) E-Commerce",
+    slug: "nala-ecommerce",
+    description:
+      "Full e-commerce website for a local organic soap business with Convex backend, real-time order management, and WhatsApp integration.",
+    longDescription: `A complete e-commerce platform built for a local organic soap business. Features a Convex real-time backend for inventory and order management, responsive product browsing, cart functionality, and automated WhatsApp order notifications that send formatted order details directly to the business owner.
+
+Built with Next.js and Tailwind CSS for a polished mobile-first shopping experience. The Convex backend provides real-time data synchronization and serverless order processing without traditional API infrastructure.`,
+    category: "Full-Stack",
+    image: nalaImage,
+    projectIcon: "ShoppingCart",
+    technologies: [
+      { name: "Next.js", icon: "Layers" },
+      { name: "TypeScript", icon: "FileJson" },
+      { name: "Tailwind", icon: "Wind" },
+      { name: "Convex", icon: "Database" },
+    ],
+    skills: ["Frontend Development", "Backend Development", "E-Commerce", "Real-time Systems"],
+    github: "https://github.com/Masalale/nala",
+    live: "https://nalather.vercel.app",
+  },
+  {
+    title: "Momentum Collective Corporate Site",
+    slug: "momentum-collective",
+    description:
+      "8-page corporate marketing site built with Astro, GSAP animations, and Lenis smooth scrolling — deployed live.",
+    longDescription: `A modern corporate marketing website for Momentum Collective, replacing an outdated codebase. Built with Astro for zero-JS-by-default performance, enhanced with GSAP for scroll-triggered animations and Lenis for buttery smooth scrolling.
+
+The 8-page site features a polished dark theme, animated page transitions, responsive layouts, and optimized asset loading. Migrated the business from a legacy site to a high-performance static build deployed on Vercel.`,
+    category: "Frontend",
+    image: momentumImage,
+    projectIcon: "Building2",
+    technologies: [
+      { name: "Astro", icon: "Rocket" },
+      { name: "GSAP", icon: "Zap" },
+      { name: "Lenis", icon: "Move" },
+      { name: "Tailwind", icon: "Wind" },
+    ],
+    skills: ["Frontend Development", "Animation", "Performance Optimization", "UI/UX"],
+    github: "",
+    live: "https://momentumcollective.info",
+  },
   {
     title: "NYC Urban Mobility Data Explorer",
     slug: "nyc-urban-mobility",
@@ -86,25 +130,6 @@ Built with React frontend and Node.js/Express backend, the application demonstra
     github: "https://github.com/MichaelAngelo-11/Quick-Open-Vote-system",
   },
   {
-    title: "Recipe Finder CLI Application",
-    slug: "recipe-finder",
-    description:
-      "CLI tool for discovering recipes based on available ingredients and cuisine preferences with API integration and containerized deployment.",
-    longDescription: `A command-line application that helps users discover recipes based on available ingredients and cuisine preferences. The tool integrates with external recipe APIs to fetch and display relevant recipes with detailed instructions.
-
-The project is containerized using Docker for consistent deployment across environments. It demonstrates proficiency in CLI application design, third-party API integration, and container orchestration.`,
-    category: "Backend",
-    image: recipeFinderImage,
-    projectIcon: "ChefHat",
-    technologies: [
-      { name: "Python", icon: "Code2" },
-      { name: "Docker", icon: "Container" },
-      { name: "API", icon: "Cloud" },
-    ],
-    skills: ["Backend Development", "API Integration", "Docker", "CLI Development"],
-    github: "https://github.com/Masalale/recipe_finder",
-  },
-  {
     title: "The Braniacs Community Website",
     slug: "braniacs-website",
     description:
@@ -124,23 +149,5 @@ Built with Tailwind CSS for styling, the project showcases frontend development 
     skills: ["Frontend Development", "Responsive Design", "UI/UX", "CSS Architecture"],
     github: "https://github.com/Masalale/the_braniacs",
     live: "https://the-braniacs.vercel.app/",
-  },
-  {
-    title: "Student Assignment Reminder System",
-    slug: "assignment-reminder",
-    description:
-      "Automated CLI application that alerts students about upcoming assignment deadlines.",
-    longDescription: `An automated notification system designed to help students track and manage assignment deadlines. The application runs as a background service, monitoring deadline dates and sending alerts via system notifications.
-
-Built with Bash scripting and Python, this project demonstrates skills in system automation, scheduled tasks, and creating developer productivity tools.`,
-    category: "DevOps",
-    image: assignmentReminderImage,
-    projectIcon: "Bell",
-    technologies: [
-      { name: "Bash", icon: "Terminal" },
-      { name: "Python", icon: "Code2" },
-    ],
-    skills: ["DevOps", "Automation", "Scripting", "System Integration"],
-    github: "https://github.com/Masalale/submission_reminder_app_masalale",
   },
 ];
