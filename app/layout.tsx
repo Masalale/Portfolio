@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
+import { Lora } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/components/providers/LenisProvider";
 import { CursorBlob } from "@/components/ui";
+
+const lora = Lora({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body-family",
+});
 
 const basePath = process.env.NODE_ENV === 'production' ? '/Portfolio' : '';
 
@@ -20,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={lora.variable}>
       <body>
         <CursorBlob />
         <LenisProvider>{children}</LenisProvider>

@@ -16,7 +16,7 @@
     /* Custom Font Families */
     --font-primary: "Boliens", serif;
     --font-brand: "CharimaShareneDemo", serif;
-    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-body: var(--font-body-family), Georgia, "Times New Roman", serif;
 
     /* Custom Shadows */
     --shadow-default: 0 4px 15px rgba(17, 16, 15, 0.08);
@@ -913,10 +913,13 @@
 .case-study-compact {
     position: relative;
     display: flex;
-    width: 90vw;
-    max-width: 1100px;
-    height: 80vh;
-    max-height: 600px;
+    width: min(92vw, 1500px);
+    /* Frame derived from the golden split: image panel = 61.8% of the width
+       at its native 16:10, so height = 0.618 * 0.625 * width. That fixes the
+       modal aspect at 1 / (0.618 * 0.625) ≈ 2.589, and the image fills its
+       panel edge-to-edge with no crop and no bands. */
+    aspect-ratio: 2.589;
+    max-height: 90vh;
     background: var(--cream);
     border-radius: 1.5rem;
     overflow: hidden;
@@ -949,17 +952,24 @@
 
 .case-study-compact-image {
     position: relative;
-    width: 45%;
-    flex-shrink: 0;
+    /* Golden major section — full-bleed 16:10 image */
+    flex: 0 0 61.8%;
+    align-self: stretch;
+    overflow: hidden;
+}
+
+.case-study-compact-image img {
+    object-fit: cover;
 }
 
 .case-study-compact-content {
-    flex: 1;
-    padding: 2.5rem;
+    /* Golden minor section */
+    flex: 0 0 38.2%;
+    padding: 2.5rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 .case-study-compact-category {
@@ -1062,19 +1072,22 @@
     .case-study-compact {
         flex-direction: column;
         width: 95vw;
-        height: 90vh;
-        max-height: none;
+        aspect-ratio: auto;
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
     }
 
     .case-study-compact-image {
+        flex: 0 0 auto;
         width: 100%;
-        height: 35%;
+        aspect-ratio: 16 / 10;
     }
 
     .case-study-compact-content {
+        flex: 0 0 auto;
         padding: 1.5rem;
-        height: 65%;
-        overflow-y: auto;
+        height: auto;
     }
 
     .case-study-compact-actions {

@@ -71,7 +71,7 @@ export function About() {
               technical problem-solving through work in family-owned businesses. I&apos;m a
               self-taught Linux user with experience in system administration, command-line
               tools, and troubleshooting. Passionate about experimenting with technology
-              from an early age—rooting Android devices, testing Linux distributions, and
+              from an early age: rooting Android devices, testing Linux distributions, and
               building personal projects.
             </p>
           </div>

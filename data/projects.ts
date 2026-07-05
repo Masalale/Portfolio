@@ -3,10 +3,8 @@ import nycImage from "@/public/projects/nyc-urban-mobility.png";
 import mobileMoneyImage from "@/public/projects/mobile-money.png";
 import votingSystemImage from "@/public/projects/voting-system.png";
 import braniacsImage from "@/public/projects/braniacs-website.png";
-
-// Placeholder — replace with actual screenshots
-const nalaImage = "/projects/braniacs-website.png";
-const momentumImage = "/projects/braniacs-website.png";
+import nalaImage from "@/public/projects/nala-ecommerce.png";
+import momentumImage from "@/public/projects/momentum-collective.png";
 
 export interface Technology {
   name: string;
@@ -53,7 +51,7 @@ Built with Next.js and Tailwind CSS for a polished mobile-first shopping experie
     title: "Momentum Collective Corporate Site",
     slug: "momentum-collective",
     description:
-      "8-page corporate marketing site built with Astro, GSAP animations, and Lenis smooth scrolling — deployed live.",
+      "8-page corporate marketing site built with Astro, GSAP animations, and Lenis smooth scrolling. Deployed live.",
     longDescription: `A modern corporate marketing website for Momentum Collective, replacing an outdated codebase. Built with Astro for zero-JS-by-default performance, enhanced with GSAP for scroll-triggered animations and Lenis for buttery smooth scrolling.
 
 The 8-page site features a polished dark theme, animated page transitions, responsive layouts, and optimized asset loading. Migrated the business from a legacy site to a high-performance static build deployed on Vercel.`,
